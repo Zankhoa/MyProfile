@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useContext, useEffect, useState, useRef } from "react";
+import {useContext, useEffect, useState, useRef} from "react";
 import Head from "next/head";
 import Header from "../component/Header/Header";
 import AppContext from "../component/AppContextFolder/AppContent";
