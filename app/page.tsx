@@ -1,37 +1,25 @@
 "use client";
-//import Image from "next/image";
 import { useContext, useEffect, useState, useRef } from "react";
 import Head from "next/head";
-// import Header from "../component/Header/Header";
+import Header from "../component/Header/Header";
 import AppContext from "../component/AppContextFolder/AppContent";
 import ThisCantBeReached from "../component/Home/ThisCantBeReached/ThisCantBeReached";
-//import ScreenSizeDetector from "../component/CustomComponents/ScreeSizeDetector";
 export default function Home() {
   const [ShowElement, setShowElement] = useState(false);
   const [ShowThisCantBeReached, setShowThisCantBeReached] = useState(true);
   const [ShowMe, setShowMe] = useState(false);
   // context Variable to clearInterval
   const context = useContext(AppContext);
-  const aboutRef = useRef<HTMLDivElement>(null);
   const homeRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    setTimeout(() => {
-      setShowElement(true);
-    }, 4500);
-
-    setTimeout(() => {
-      setShowThisCantBeReached(false);
-    }, 5400);
-
+    useEffect(() => {
+    // ? INFORMATIONAL next function will show the component after changing the state of ShowMe
     setTimeout(() => {
       setShowElement(false);
       setShowMe(true);
-      context?.setSharedState((prevState) => ({
-        ...prevState,
-        finishedLoading: true,
-      }));
+      context.sharedState.finishedLoading = true;
+      context.setSharedState(context.sharedState);
     }, 6000);
-  }, []);
+  }, [context, context.sharedState]);
 
   console.log("website is rendering...");
   const meta = {
@@ -40,22 +28,15 @@ export default function Home() {
     image: "/titofCercle.png",
     type: "website",
   };
-  const isProd = process.env.NODE_ENV === "production";
   return (
     <>
       <Head>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
-        {/* <meta property="og:title" content={meta.title} /> */}
       </Head>
       <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full ">
-        {context?.sharedState.finishedLoading ? (
-          <></>
-        ) : ShowThisCantBeReached ? (
-          <ThisCantBeReached />
-        ) : (
-          <></>
-        )}
+      {context.sharedState.finishedLoading ? <></> : ShowThisCantBeReached ? <ThisCantBeReached /> : <></>}
+      <Header finishedLoading={context.sharedState.finishedLoading} sectionsRef={homeRef} />
       </div>
     </>
   );

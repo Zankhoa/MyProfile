@@ -1,14 +1,22 @@
 'use client';
-import React, {ReactNode, useState, useRef, useMemo} from 'react';
-import AppContext, {SharedState} from './AppContent';
+import React, {ReactNode, useState, useMemo} from 'react';
+import AppContext from './AppContent';
 
 export default function AppContextProvider({ children }: { children: ReactNode }) {
-  const [sharedState, setSharedState] = useState<SharedState>({
+  const [sharedState, setSharedState] = useState({
+    portfolio:{
+      NavBar:{
+        IntervalEvent: null,
+        scrolling: null,
+        scrollSizeY: null,
+      },
+      Scrolling:{
+        IntervalEvent: null,
+      },
+    },
     finishedLoading: false,
   });
-
   const value = useMemo(() => ({ sharedState, setSharedState }), [sharedState]);
-
   return (
     <AppContext.Provider value={value}>
       {children}
