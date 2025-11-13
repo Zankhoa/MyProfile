@@ -1,9 +1,15 @@
 "use client";
 import { useContext, useEffect, useState, useRef } from "react";
 import Head from "next/head";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Header from "../component/Header/Header";
 import AppContext from "../component/AppContextFolder/AppContent";
 import ThisCantBeReached from "../component/Home/ThisCantBeReached/ThisCantBeReached";
+import MyName from "../component/Home/MyName/MyName";
+import SocialMediaArround from "../component/Home/SocialMediaArround/SocialMediaArround";
+
+
 export default function Home() {
   const [ShowElement, setShowElement] = useState(false);
   const [ShowThisCantBeReached, setShowThisCantBeReached] = useState(true);
@@ -11,8 +17,8 @@ export default function Home() {
   // context Variable to clearInterval
   const context = useContext(AppContext);
   const homeRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
-    // ? INFORMATIONAL next function will show the component after changing the state of ShowMe
     setTimeout(() => {
       setShowElement(false);
       setShowMe(true);
@@ -21,9 +27,13 @@ export default function Home() {
     }, 6000);
   }, [context, context.sharedState]);
 
+    useEffect(() => {
+    Aos.init({ duration: 2000, once: true });
+  }, []);
+
   console.log("website is rendering...");
   const meta = {
-    title: "Abdellatif Anaflous - Lead Full Stack Software Engineer",
+    title: "Pham Van Khoa - Junior Software Engineer",
     description: `I've been working on Software development for more than 7 years. Get in touch with me to know more.`,
     image: "/titofCercle.png",
     type: "website",
@@ -37,6 +47,9 @@ export default function Home() {
       <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full ">
       {context.sharedState.finishedLoading ? <></> : ShowThisCantBeReached ? <ThisCantBeReached /> : <></>}
       <Header finishedLoading={context.sharedState.finishedLoading} sectionsRef={homeRef} />
+      <MyName finishedLoading={context.sharedState.finishedLoading} />
+      <SocialMediaArround finishedLoading={context.sharedState.finishedLoading} />
+      
       </div>
     </>
   );
