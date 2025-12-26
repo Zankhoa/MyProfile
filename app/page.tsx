@@ -8,7 +8,8 @@ import AppContext from "../component/AppContextFolder/AppContent";
 import ThisCantBeReached from "../component/Home/ThisCantBeReached/ThisCantBeReached";
 import MyName from "../component/Home/MyName/MyName";
 import SocialMediaArround from "../component/Home/SocialMediaArround/SocialMediaArround";
-
+import AboutMe from "../component/Home/AboutMe/AboutMe";
+import MyExperience from "../component/Home/MyExperience/MyExperience";
 
 export default function Home() {
   const [ShowElement, setShowElement] = useState(false);
@@ -17,7 +18,7 @@ export default function Home() {
   // context Variable to clearInterval
   const context = useContext(AppContext);
   const homeRef = useRef<HTMLDivElement>(null);
-
+  const aboutRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
     setTimeout(() => {
       setShowElement(false);
@@ -49,7 +50,8 @@ export default function Home() {
       <Header finishedLoading={context.sharedState.finishedLoading} sectionsRef={homeRef} />
       <MyName finishedLoading={context.sharedState.finishedLoading} />
       <SocialMediaArround finishedLoading={context.sharedState.finishedLoading} />
-      
+      {context.sharedState.finishedLoading ? <AboutMe ref={aboutRef} /> : <></>}
+      {context.sharedState.finishedLoading ? <MyExperience /> : <></>}
       </div>
     </>
   );
