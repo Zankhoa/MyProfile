@@ -26,10 +26,10 @@ const projects = [
     name: "OnMarketer",
     role: "Full-stack Developer",
     tech: {
-      Backend: "C#, ASP.NET Core Web API",
+      Backend: " ASP.NET, C#, ADO.NET",
       Database: "SQL Server",
       Frontend: "HTML, CSS, JavaScript, jQuery (AJAX)",
-      "API Integration": "Google Ads API, Google Analytics API",
+      "API Integration": "Google Sheets API, HubSpot API",
     },
     Reponsible: {
       Description1:

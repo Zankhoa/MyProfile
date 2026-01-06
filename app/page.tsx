@@ -35,8 +35,7 @@ export default function Home() {
   console.log("website is rendering...");
   const meta = {
     title: "Pham Van Khoa - Junior Software Engineer",
-    description: `I've been working on Software development for more than 7 years. Get in touch with me to know more.`,
-    image: "/titofCercle.png",
+    description: `I've been working on Software development for more than 2 years. Get in touch with me to know more.`,
     type: "website",
   };
   return (

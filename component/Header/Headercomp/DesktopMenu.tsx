@@ -22,7 +22,7 @@ export default function DesktopMenu(props: {finishedLoading: boolean }){
        
       >
         <ReactScrollLink to="aboutSection" spy={true} smooth={true} offset={-100} duration={200}>
-           01. <span className="text-white hover:cursor-pointer hover:text-AAsecondary duration-300">About</span>
+           01. <span className="text-white hover:cursor-pointer hover:text-AAsecondary duration-300">About me</span>
         </ReactScrollLink>
       </motion.div>
       <motion.div
@@ -42,9 +42,9 @@ export default function DesktopMenu(props: {finishedLoading: boolean }){
         className="text-AAsecondary"
        
       >
-        <ReactScrollLink to="WhereIhaveWorkedSection" spy={true} smooth={true} offset={-300} duration={200}>
+        <ReactScrollLink to="MyExperienceSection" spy={true} smooth={true} offset={-300} duration={200}>
          02.{" "}
-          <span className="text-white  hover:cursor-pointer hover:text-AAsecondary duration-300">Experience</span>
+          <span className="text-white  hover:cursor-pointer hover:text-AAsecondary duration-300">My experience</span>
         </ReactScrollLink>
       </motion.div>
       <motion.div
@@ -63,10 +63,9 @@ export default function DesktopMenu(props: {finishedLoading: boolean }){
         }}
         className="text-AAsecondary"
       >
-        <ReactScrollLink to="SomethingIveBuiltSection" spy={true} smooth={true} offset={-100} duration={200}>
+        {/* <ReactScrollLink to="SomethingIveBuiltSection" spy={true} smooth={true} offset={-100} duration={200}>
          03. <span className="text-white  hover:cursor-pointer hover:text-AAsecondary duration-300">Work</span>
-
-        </ReactScrollLink>
+        </ReactScrollLink> */}
         
       </motion.div>
       <motion.span
@@ -85,9 +84,9 @@ export default function DesktopMenu(props: {finishedLoading: boolean }){
         }}
         className="text-AAsecondary"
       >
-         <ReactScrollLink to="GetInTouchSection" spy={true} smooth={true} offset={-100} duration={200}>
-          04. <span className="text-white  hover:cursor-pointer hover:text-AAsecondary duration-300">Contact</span>
-        </ReactScrollLink>
+         {/* <ReactScrollLink to="GetInTouchSection" spy={true} smooth={true} offset={-100} duration={200}>
+          0. <span className="text-white  hover:cursor-pointer hover:text-AAsecondary duration-300">Contact</span>
+        </ReactScrollLink> */}
       </motion.span>
       <a href={"/resume.pdf"} target={"_blank"} rel="noreferrer">
       <motion.button

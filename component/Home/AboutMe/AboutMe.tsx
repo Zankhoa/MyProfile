@@ -1,5 +1,6 @@
 import React, { ForwardedRef } from "react";
 import { forwardRef } from "react";
+import Img from "../../../component/smallComp/image/Img"; // Assuming this path is correct for your project
 import ArrowIcon from "../../Icons/ArrowIcon";
 const AboutMe = forwardRef<HTMLDivElement>(() => {
   const technologies = [
@@ -99,11 +100,11 @@ const AboutMe = forwardRef<HTMLDivElement>(() => {
             <div className="group-hover:translate-x-3 group-hover:translate-y-3 duration-300 absolute w-5/6 h-5/6 border-2 border-AAsecondary translate-x-5 translate-y-5 rounded"></div>
             <div className="absolute w-5/6 h-5/6 rounded overflow-hidden">
               <div className="absolute w-full h-full group-hover:opacity-0 bg-AAsecondary opacity-10 duration-300 rounded overflow-hidden"></div>
-              {/* <Img
-                src={"/img/Portfolio-portrait-3.jpg"}
+              <Img
+                src={"/img/123.jpg"}
                 className={"object-contain rounded-lg"}
                 alt="My Image Not Found"
-              /> */}
+              />
             </div>
           </div>
 
@@ -111,11 +112,11 @@ const AboutMe = forwardRef<HTMLDivElement>(() => {
           <div className="relative w-full h-48 md:hidden flex justify-center items-center">
             <div className="absolute w-48 h-full rounded translate-x-5 translate-y-5 border-2 border-AAsecondary"></div>
             <div className="absolute w-48 h-full rounded overflow-hidden">
-              {/* <Img
-                src={"/img/Portfolio-portrait-3.jpg"}
+              <Img
+                src={"/img/123.jpg"}
                 className={"object-contain rounded-lg"}
                 alt="My Image Not Found"
-              /> */}
+              />
             </div>
             <div className="absolute w-48 h-full bg-AAsecondary opacity-10 md:opacity-60 rounded overflow-hidden"></div>
           </div>
@@ -125,4 +126,4 @@ const AboutMe = forwardRef<HTMLDivElement>(() => {
   );
 });
 AboutMe.displayName = "AboutMe";
-export default AboutMe; // Changed to a const for functional component definition with type
+export default AboutMe; 
