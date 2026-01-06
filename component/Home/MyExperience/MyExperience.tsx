@@ -1,63 +1,135 @@
-import React from 'react'; // Bỏ 'use' nếu không dùng đến
-import { useRouter } from "next/router";
+"use client";
+
+import React from "react";
 import ArrowIcon from "../../Icons/ArrowIcon";
 
+const projects = [
+  {
+    name: "ClickTracking",
+    role: "Full-stack Developer",
+    tech: {
+      Backend: "C#, ASP.NET Core Web API",
+      Database: "SQL Server",
+      Frontend: "HTML, CSS, JavaScript, jQuery (AJAX)",
+      "API Integration": "Google Ads API, Google Analytics API",
+    },
+    Reponsible: {
+      Description1:
+        "Collect Google Ads API data and present it to users, allowing them to monitor the effectiveness of click fraud protection and track the performance of advertising campaigns.",
+      Description2:
+        "Implemented background jobs with Hangfire to send alerts for expiring services and automate report generation.",
+      Description3:
+        "Collected and aggregated advertising campaign data from multiple sources to create summary tables and visualized key metrics such as impressions, clicks, and conversions using Chart.js.",
+    },
+  },
+  {
+    name: "OnMarketer",
+    role: "Full-stack Developer",
+    tech: {
+      Backend: "C#, ASP.NET Core Web API",
+      Database: "SQL Server",
+      Frontend: "HTML, CSS, JavaScript, jQuery (AJAX)",
+      "API Integration": "Google Ads API, Google Analytics API",
+    },
+    Reponsible: {
+      Description1:
+        "Implemented customer data synchronization with Google Sheets using Google Sheets API, enabling real-time updates and automated campaign tracking.",
+      Description2:
+        "Integrated HubSpot API to synchronize customer data, automate marketing workflows, and improve lead management and customer engagement.",
+    },
+  },
+];
+
 const MyExperience = () => {
-  // const router = useRouter();
-
   return (
-    <div
+    <section
       id="MyExperienceSection"
-      className="flex flex-col space-y-4 md:space-y-6 xl:space-y-8 bg-AAprimary w-full 
-      2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-20 px-4"
+      className="bg-AAprimary w-full py-24 px-4 sm:px-8 md:px-12 lg:px-20 2xl:px-48"
     >
-      {/* // ? Title */}
-      <div data-aos="fade-up" className="flex flex-row items-center md:px-0">
-        <ArrowIcon className="flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-AAsecondary" />
-        
-        {/* Thêm tiêu đề ở đây để giao diện hiển thị rõ ràng hơn */}
-        <div className="flex flex-row items-center ml-2">
-          <span className="text-AAsecondary font-sans text-sm sm:text-xl"> 02. </span>
-          <span className="text-gray-200 font-bold text-2xl px-4"> Kinh nghiệm làm việc </span>
-          {/* <div className="h-[0.2px] w-32 sm:w-64 bg-gray-400 ml-4"></div> */}
-        </div>
+      {/* ===== Title ===== */}
+      <div className="flex items-center mb-14">
+        <ArrowIcon className="h-5 w-5 text-AAsecondary translate-y-[2px]" />
+        <span className="text-AAsecondary font-mono ml-3">02.</span>
+        <h2 className="text-gray-200 font-bold text-2xl sm:text-3xl ml-4">
+          Kinh nghiệm làm việc
+        </h2>
+        <div className="hidden sm:block flex-1 h-px bg-gray-600/60 ml-6" />
       </div>
 
+      {/* ===== Experience Card ===== */}
+      <div className="rounded-xl bg-AAsecondary/5 border border-white/5 p-6 sm:p-8 hover:border-AAsecondary transition">
+        {/* Company + Time */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
+          <h3 className="text-xl font-bold text-gray-200">
+            Novaon Company
+          </h3>
+          <span className="text-AAsecondary font-mono text-sm mt-1 sm:mt-0">
+            06/2023 – 12/2025
+          </span>
+        </div>
 
-{/* loi o day  */}
-      {/* // ? Content */}
-        <div className="flex flex-col space-y-6 md:space-y-10 xl:space-y-12">
-        {/* // ? Job 1 */}
-        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full   ">
-           <div className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 col-span-8 flex flex-col items-start  space-y-3 md:order-1">
-              <div className="flex flex-col space-y-1 z-10">
-                <span className=" md:text-gray-200 text-AAsecondary font-bold text-xl hover:cursor-pointer">
-                    Novaon Company
-                  </span>
-                  <span className="text-AAsecondary font-mono text-sm">6/2023 - 12/2025</span>
+        {/* Projects */}
+        <div className="space-y-12">
+          {projects.map((project, index) => (
+            <div key={project.name}>
+              {/* Project Header */}
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-xs font-mono text-AAsecondary border border-AAsecondary/40 px-3 py-1 rounded-full">
+                  Project
+                </span>
+                <h4 className="text-lg font-semibold text-gray-200">
+                  {project.name}
+                </h4>
               </div>
-        <div className="w-full md:max-w-xl space-y-4 sm:text-base text-sm">
-          <p className="font-Header text-gray-400 text-left leading-relaxed">
-            Hey there! I&apos;m Khoa — a young and passionate developer with{" "}
-            <span className="text-AAsecondary font-medium">
-              1.5 years of experience
-            </span>{" "}
-            in software development. I&apos;m always eager to explore new
-            technologies and keep learning, not only to improve myself but
-            also to deliver better results in every project I take on.
-          </p>
-        </div>
+
+              {/* Role */}
+              <p className="text-gray-400 mb-4">
+                <span className="text-gray-300 font-semibold">
+                  Role:
+                </span>{" "}
+                {project.role}
+              </p>
+
+              {/* Responsibilities */}
+              {project.Reponsible && (
+                <div className="mb-6">
+                  <p className="text-gray-300 font-semibold mb-2">
+                    Responsibilities:
+                  </p>
+                  <ul className="space-y-2 text-gray-400 list-disc list-inside">
+                    {Object.values(project.Reponsible).map(
+                      (desc, i) => (
+                        <li key={i}>{desc}</li>
+                      )
+                    )}
+                  </ul>
+                </div>
+              )}
+
+              {/* Tech Stack */}
+               <p className="text-gray-300 font-semibold mb-2">
+                    Tech:
+                  </p>
+              <ul className="space-y-2 text-gray-400 list-disc list-inside">
+                {Object.entries(project.tech).map(([key, value]) => (
+                  <li key={key}>
+                    <span className="text-gray-300 font-medium">
+                      {key}:
+                    </span>{" "}
+                    {value}
+                  </li>
+                ))}
+              </ul>
+
+              {index !== projects.length - 1 && (
+                <div className="mt-10 h-px bg-white/5" />
+              )}
             </div>
+          ))}
+        </div>
       </div>
-    </div>
-     </div>
-
-
-
-
-
+    </section>
   );
 };
 
-// Chỉ giữ lại một dòng export default duy nhất ở cuối
 export default MyExperience;
