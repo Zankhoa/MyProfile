@@ -51,7 +51,7 @@ const MyExperience = () => {
         <ArrowIcon className="h-5 w-5 text-AAsecondary translate-y-[2px]" />
         <span className="text-AAsecondary font-mono ml-3">02.</span>
         <h2 className="text-gray-200 font-bold text-2xl sm:text-3xl ml-4">
-          Kinh nghiệm làm việc
+          My Experience
         </h2>
         <div className="hidden sm:block flex-1 h-px bg-gray-600/60 ml-6" />
       </div>
