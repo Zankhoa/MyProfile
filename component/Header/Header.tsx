@@ -21,15 +21,6 @@ const Header = (props: { finishedLoading: boolean, sectionsRef}) => {
           scrollSizeY.current = window.scrollY;
         } else {
           if (window.scrollY > 50) {
-            // if (window.scrollY > scrollSizeY.current) {
-            //   if (RefNavBar) {
-            //     RefNavBar.current?.classList.remove("translate-y-0");
-            //     RefNavBar.current?.classList.add("-translate-y-full");
-            //   }
-            // } else {
-            //   RefNavBar.current?.classList.add("translate-y-0");
-            //   RefNavBar.current?.classList.remove("-translate-y-full");
-            // }
             scrollSizeY.current = window.scrollY;
           }
         }
@@ -64,8 +55,6 @@ const Header = (props: { finishedLoading: boolean, sectionsRef}) => {
         className={`w-full fixed ${ShowElement ? `bg-opacity-70 shadow-xl` : `bg-opacity-0 `} bg-AAprimary flex 
       justify-between px-6 sm:px-12 py-2 sm:py-4  transition duration-4000 translate-y-0 z-20`}
       >
-        {/* Logo A */}
-        {/* <Logo finishedLoading={props.finishedLoading} /> */}
 
         {/* Hide icon Designed by me */}
         <IconMenu

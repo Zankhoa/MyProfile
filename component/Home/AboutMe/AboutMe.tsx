@@ -44,8 +44,8 @@ const AboutMe = forwardRef<HTMLDivElement>(() => {
           <div className="w-full md:w-7/12 space-y-4 sm:text-base text-sm">
             <div className="font-Header text-gray-400 text-justify">
               Hey there! I&apos;m Khoa — a young and passionate developer with
-              over{" "}
-              <span className="text-AAsecondary">1.5 years of experience</span>{" "}
+              {" "}
+             <span className="text-AAsecondary">nearly 2 years of experience</span>{" "}
               in software development. I&apos;m always eager to explore new
               technologies and keep learning, not only to improve myself but
               also to deliver better results in every project I take on.

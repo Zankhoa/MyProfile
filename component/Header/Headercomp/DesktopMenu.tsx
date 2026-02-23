@@ -88,7 +88,7 @@ export default function DesktopMenu(props: {finishedLoading: boolean }){
           0. <span className="text-white  hover:cursor-pointer hover:text-AAsecondary duration-300">Contact</span>
         </ReactScrollLink> */}
       </motion.span>
-      <a href={"/resume.pdf"} target={"_blank"} rel="noreferrer">
+      <a href={"/MyCv.pdf"} target={"_blank"} rel="noreferrer">
       <motion.button
         initial={{
           y: -40,

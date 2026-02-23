@@ -192,19 +192,19 @@ export default function ThisCantBeReached() {
           className="w-full  flex flex-col space-y-8"
         >
           <span className="text-gray-600 font-Header text-2xl">
-            This site{" "}
+            You can wait{" "}
             {ShowText ? (
               <motion.span
                 animate={{ scale: ["100%", "120%"] }}
                 transition={{ scale: { delay: 4, duration: 0.5 } }}
                 className="font-bold"
               >
-                actually can
+                for me to 
               </motion.span>
             ) : (
               <span>can&apos;t</span>
             )}{" "}
-            be reached
+            be reached hehe
           </span>
           <span className="text-gray-500 text-md">
             <span className="font-bold">www.anaflous.com </span>

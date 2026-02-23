@@ -64,7 +64,7 @@ const MyExperience = () => {
             Novaon Company
           </h3>
           <span className="text-AAsecondary font-mono text-sm mt-1 sm:mt-0">
-            06/2023 – 12/2025
+            03/2023 – 12/2025
           </span>
         </div>
 
