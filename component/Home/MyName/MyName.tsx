@@ -63,9 +63,9 @@ const MyName: React.FC<MyNameProps> = (props) => {
         <span className="text-AAsecondary keyword-hover">
           .NET Software Engineer
         </span>{" "}
-        with over{" "}
+        with nearly{" "}
         <span className="text-AAsecondary keyword-hover">
-          1.5 years of practical experience
+           2 years of practical experience
         </span>{" "}
         in building efficient and scalable web applications.
         <br className="3xl:block hidden" /> I specialize in{" "}
