@@ -124,7 +124,7 @@ const MyExperience = () => {
                       <ul className="space-y-2 text-gray-400 list-disc list-inside">
                         {Object.values(project.Reponsible).map(
                           (desc, i) => (
-                            <li key={i}>{desc}</li>
+                            <li key={i}>{desc as string}</li>
                           )
                         )}
                       </ul>
@@ -141,7 +141,7 @@ const MyExperience = () => {
                         <span className="text-gray-300 font-medium">
                           {key}:
                         </span>{" "}
-                        {value}
+                        {value as string}
                       </li>
                     ))}
                   </ul>
