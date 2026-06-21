@@ -200,11 +200,11 @@ export default function ThisCantBeReached() {
                 className="font-bold"
               >
                 for me to 
-              </motion.span>
+              </motion.span>  
             ) : (
               <span>can&apos;t</span>
             )}{" "}
-            be reached hehe
+            be reached hehehehehehee funnyy...
           </span>
           <span className="text-gray-500 text-md">
             <span className="font-bold">www.anaflous.com </span>

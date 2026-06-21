@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import Aos from "aos";
-import "aos/dist/aos.css";
+// import "aos/dist/aos.css";
 import Header from "../component/Header/Header";
 import AppContext from "../component/AppContextFolder/AppContent";
 import ThisCantBeReached from "../component/Home/ThisCantBeReached/ThisCantBeReached";

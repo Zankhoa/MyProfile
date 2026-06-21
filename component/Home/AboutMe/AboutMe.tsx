@@ -4,12 +4,13 @@ import Img from "../../../component/smallComp/image/Img"; // Assuming this path 
 import ArrowIcon from "../../Icons/ArrowIcon";
 const AboutMe = forwardRef<HTMLDivElement>(() => {
   const technologies = [
-    ["Next.js/React", "TypeScript/JavaScript", "Tailwind CSS", "JQuery"],
+    ["Next.js/React", "TypeScript/JavaScript", "Tailwind CSS", "JQuery", "Flutter"],
     [
       "ASP.net/ASP.NET Core Web API",
       "DotNet Core",
       "Entity Framework",
       "MongoDB/SQL Server/MySQL",
+      "Dart",
     ],
   ];
 
